@@ -9,7 +9,7 @@ pipeline {
     stage('Snyk Open Source Test') {
       steps {
         // Run Snyk test and fail build on high severity issues
-        snykInstallation: snyk@latest
+        snykInstallation: snyk-app
         snykTokenId: snyk-token
         failOnIssues: true
         failOnError: true
