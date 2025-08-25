@@ -8,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: jenkinsci/jfr-setup-action@master
+        with:
+          jenkins-version: "2.246.1"
       - uses: jenkinsci/jfr-plugin-installation-action@master
         with:
           pluginstxt: plugins.txt
