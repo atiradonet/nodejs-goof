@@ -3,4 +3,5 @@ docker
 junit
 credentials
 blueocean
+adoptopenjdk
 snyksecurity
