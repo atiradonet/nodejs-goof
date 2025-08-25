@@ -4,11 +4,11 @@ jobs:
   jenkins-container-pipeline:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/jenkinsci/jenkinsfile-runner:master
+      image: ghcr.io/jenkinsci/jenkinsfile-runner:jre-11
     env:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: jenkinsci/jfr-container-action@master
         with:
           command: run
