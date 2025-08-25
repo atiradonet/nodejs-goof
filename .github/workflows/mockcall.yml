@@ -4,15 +4,11 @@ jobs:
   jenkins-container-pipeline:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/jenkinsci/jenkinsfile-runner:jre-11
+      image: ghcr.io/jenkinsci/jenkinsfile-runner:latest
     env:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '21'
       - uses: jenkinsci/jfr-container-action@master
         with:
           command: run
