@@ -1,6 +1,1 @@
-git
-docker
-junit
-credentials
-blueocean
 snyksecurity
