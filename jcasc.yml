@@ -1,0 +1,11 @@
+tool:
+  jdk:
+    installations:
+      - name: jdk21
+        home: "~/jdk21"
+        properties:
+          - installSource:
+              installers:
+                - adoptOpenJdkInstaller:
+                    id: "jdk-21.0.7+6"
+
