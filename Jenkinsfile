@@ -20,14 +20,14 @@ pipeline {
       steps {
         sh 'docker-compose down'
         sh 'rm -rf ~/projects/nodejs-goof'
-        /* dir('~/projects') {
+        dir('~/projects') {
           sh 'git clone https://github.com/atiradonet/nodejs-goof.git'
         }
         dir('~/projects/nodejs-goof') {
           sh 'docker-compose pull'
           sh 'docker-compose up --build -d'
           sh 'docker image prune -f'
-        } */
+        }
       }
     }
   }
