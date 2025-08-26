@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Snyk Security Testing'
         snykSecurity(
-          snykInstallation: 'snyk-app',
+          snykInstallation: 'global-snyk-app',
           snykTokenId: 'snyk-token',
           failOnIssues: true
         )
