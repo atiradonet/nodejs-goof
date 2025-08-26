@@ -11,8 +11,7 @@ pipeline {
         echo 'Snyk Security Testing'
         snykSecurity(
           snykInstallation: 'snyk-app',
-          snykTokenId: 'snyk-token',
-          // place other parameters here
+          snykTokenId: 'snyk-token'
         )
       }
     }
