@@ -20,10 +20,10 @@ pipeline {
       steps {
         sh 'docker-compose down'
         sh 'rm -rf /Projects/nodejs-goof'
-        dir('/Projects') {
+        dir('/projects') {
           sh 'git clone https://github.com/atiradonet/nodejs-goof.git'
         }
-        dir('/Projects/nodejs-goof') {
+        dir('/projects/nodejs-goof') {
           sh 'docker-compose pull'
           sh 'docker-compose up --build -d'
           sh 'docker image prune -f'
