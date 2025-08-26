@@ -6,9 +6,8 @@ pipeline {
         git url: 'https://github.com/atiradonet/nodejs-goof.git', branch: 'main'
       }
     }
-    stage('Test') {
+    stage('Test: Snyk Security Testing') {
       steps {
-        echo 'Snyk Security Testing'
         snykSecurity(
           snykInstallation: 'snyk-app',
           snykTokenId: 'snyk-token',
