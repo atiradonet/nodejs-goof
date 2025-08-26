@@ -6,11 +6,14 @@ pipeline {
         git url: 'https://github.com/atiradonet/nodejs-goof.git', branch: 'main'
       }
     }
-    stage('Snyk Open Source Test') {
+    stage('Test') {
       steps {
-        withEnv(["SNYK_TOKEN=${env.SNYK_TOKEN}"]) {
-          sh 'npx snyk test --severity-threshold=high'
-        }
+        echo 'Snyk Security Testing'
+        snykSecurity(
+          snykInstallation: 'snyk-app',
+          snykTokenId: 'snyk-token',
+          // place other parameters here
+        )
       }
     }
   }
