@@ -18,12 +18,12 @@ pipeline {
     }
     stage('Deploy and Run with Docker Compose') {
       steps {
+        sh 'docker-compose down'
         sh 'rm -rf /Projects/nodejs-goof'
         dir('/Projects') {
           sh 'git clone https://github.com/atiradonet/nodejs-goof.git'
         }
         dir('/Projects/nodejs-goof') {
-          sh 'docker-compose down'
           sh 'docker-compose pull'
           sh 'docker-compose up --build -d'
           sh 'docker image prune -f'
