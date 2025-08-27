@@ -11,8 +11,8 @@ pipeline {
         snykSecurity(
           snykInstallation: 'snyk-app',
           snykTokenId: 'snyk-token',
-          failOnIssues: false,
-          severity: 'high'
+          failOnIssues: true,
+          severity: 'low'
         )
       }
     }
